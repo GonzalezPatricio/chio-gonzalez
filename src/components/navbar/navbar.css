@@ -1,0 +1,41 @@
+
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+	text-decoration: none;
+    color: #03284d;
+
+}
+.logo {
+	margin: 0;
+	font-size: 2rem;
+	padding: 10px 15px;
+	text-align: center;
+	display: flex;
+}
+.header {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	border: 1px solid #a2a2a2;
+	background-color: #343a40;
+	border-radius: 7px;
+}
+.navbar {
+    width: 90%;
+    display: flex;
+    padding: 1rem;
+    margin: auto;
+}
+.brand{
+    font-size: 2rem;
+}
+.serch {
+    display: flex;
+    margin-left: 50px;
+}
