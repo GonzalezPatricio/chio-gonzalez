@@ -30,13 +30,17 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.container1{
+  display: flex;
+}
 
 .card{
-  display: flex;
-  width: 600px;
+  /* display: flex; */
+  width: 450px;
   height: 500px;
   border-radius: 5px;
   margin:20px;
+  background-color: #282c34;
 }
 
 .pictureUrl{
@@ -46,18 +50,34 @@
 .title{
   margin: auto;
   text-decoration: underline;
+  color:aliceblue;
 }
 .description{
   margin: auto;
   font-style: italic;
+  color:aliceblue;
 }
 .price{
   margin: auto;
   font-size: 20px;
   font-weight: bold;
   color: red;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .id{
   font-weight: 800;
+}
+
+.detalle{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color:#f0f0f1;
+}
+.categoria{
+  color:#f0f0f1;
+}
+.categoria:hover {
+  text-decoration:underline;
 }
