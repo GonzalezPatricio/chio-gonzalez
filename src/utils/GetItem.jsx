@@ -104,7 +104,7 @@ export const getItem = new Promise((res, rej)=> {
     }
 })
 
-const item = { id: 9, title: "Mouse Logitech", description: "Logitech Master Series MX Master 3", fullDescription: "Mouse inalambrico con sensor Optico Darkfield, con rendimiento de 4.000 dpi, respuesta de 1 ms", price: 10499, pictureUrl: img9, categoria: "Mouses"}
+const item = items.find(item => item.id)
 
 export const getItemUno = new Promise((res, rej)=> {
     let info = '200'

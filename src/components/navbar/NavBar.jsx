@@ -18,15 +18,19 @@ export default function NavBar() {
                             <Nav className="mr-auto">
                                 <Nav.Link href="/">HOME</Nav.Link>
                                     <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
-                                    <Link to='/categoria'>
-                                    <NavDropdown.Item>Monitores</NavDropdown.Item>
-                                    </Link>
-                                    <Link to='/categoria'>
-                                    <NavDropdown.Item>Teclados</NavDropdown.Item>
-                                    </Link>
-                                    <Link to='/categoria'>
-                                    <NavDropdown.Item>Mouse's</NavDropdown.Item>
-                                    </Link>
+                                    
+                                    <NavDropdown.Item>
+                                    <Link to='/categoria/monitores'>Monitores</Link>
+                                    </NavDropdown.Item>
+
+                                    <NavDropdown.Item>
+                                    <Link to='/categoria/teclados'>Teclados</Link>
+                                    </NavDropdown.Item>
+
+                                    <NavDropdown.Item>
+                                    <Link to='/categoria/mouses'>Mouse's</Link>
+                                    </NavDropdown.Item>
+
                                     <NavDropdown.Divider />
                                     
                                     <NavDropdown.Item href="#action/3.4">Medios de Pago</NavDropdown.Item>

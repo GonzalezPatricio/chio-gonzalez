@@ -9,10 +9,20 @@ const ItemDetailContainer = () =>{
     const { idProducto } = useParams()
     
     useEffect(() => {
-        getItemUno
-        .then(resp => setProduct(resp))
+      if (idProducto) {
+          getItemUno
+        .then(info =>{
+            setProduct(info.filter(item=> item.id===idProducto)) 
+        })
         .catch(err => console.log(err))
-    },[])
+      } else {
+          getItemUno
+          .then(info=> {
+              setProduct(info)
+          })
+          .catch(error => console.log(error))
+      }
+    },[idProducto])
 
     console.log(idProducto)
 

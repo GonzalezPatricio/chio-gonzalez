@@ -13,12 +13,16 @@ function App() {
         <Route path='/' exact component>
           < ItemListContainer greeting="Bienvenido!!" pHome="ENCONTRA TODO LO QUE ESTABAS BUSCANDO"/>
         </Route>
-        <Route path='/item/:idProducto'>
+
+        <Route path='/item/:idProducto' exact component>
           < ItemDetailContainer />
         </Route>
-        <Route path='/categoria/:id'>
-          < ItemDetailContainer />
+
+        <Route path='/categoria/:idCategoria' exact component >
+          < ItemListContainer />
         </Route>
+        
+
       </Switch> 
     </div>
   </Router>
