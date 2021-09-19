@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+// import { motion } from "framer-motion";
 
 export default function Contador({ stock, initial, onAdd = () => {} }){
     const [contador, setContador] = useState(initial);

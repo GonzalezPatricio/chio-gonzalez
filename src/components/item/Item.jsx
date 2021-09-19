@@ -6,14 +6,14 @@ import { Button } from "react-bootstrap";
 
 function Item({item}) {
     return (
-        <div className="container1">
+        <div className="container1" key={item.id}>
             <div className="card">
                 <div className="pictureUrl"><img src={item.pictureUrl} alt="fotoItem" /></div>
                 <div className="title"><h1>{item.title}</h1></div>
                 <div className="description"><p>Description: "{item.description}"</p></div>
                 <div className="id">
                     <Link to = {`/item/${item.id}`}>
-                       <Button variant="secondary" style={{margin: 5}}>
+                       <Button variant="secondary">
                            Detalle del Producto
                        </Button>
                     </Link>

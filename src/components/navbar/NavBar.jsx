@@ -20,15 +20,15 @@ export default function NavBar() {
                                     <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
                                     
                                     <NavDropdown.Item>
-                                    <Link to='/categoria/monitores'>Monitores</Link>
+                                    <Link to='/categoria/Monitores'>Monitores</Link>
                                     </NavDropdown.Item>
 
                                     <NavDropdown.Item>
-                                    <Link to='/categoria/teclados'>Teclados</Link>
+                                    <Link to='/categoria/Teclados'>Teclados</Link>
                                     </NavDropdown.Item>
 
                                     <NavDropdown.Item>
-                                    <Link to='/categoria/mouses'>Mouse's</Link>
+                                    <Link to='/categoria/Mouses'>Mouse's</Link>
                                     </NavDropdown.Item>
 
                                     <NavDropdown.Divider />

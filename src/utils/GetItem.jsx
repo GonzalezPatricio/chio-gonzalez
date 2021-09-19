@@ -98,20 +98,28 @@ export const getItem = new Promise((res, rej)=> {
     if(info === '200'){
         setTimeout (()=> {
             res(items)
-        },3000)
+        }, 2000)
     }else{
         rej('404 Not Found')
     }
 })
 
-const item = items.find(item => item.id)
+const item = {
+    id: 1,
+    title: "Monitor LG",
+    description: "Monitor gamer re fachero grande LG",
+    fullDescription: "Tamaño de 49 pulgadas, con panel IPS de relación de aspecto 32:9, la resolución es de 5120 x 1440 con pantalla curva, cuanta con HDMI, salida de auriculares, USB-C, DisplayPort.",
+    price: 145200,
+    pictureUrl: img1,
+    categoria: "Monitores"
+}
 
 export const getItemUno = new Promise((res, rej)=> {
     let info = '200'
     if(info === '200'){
         setTimeout (()=> {
             res(item)
-        }, 3000)
+        }, 2000)
     }else{
         rej('404 Not Found')
     }
