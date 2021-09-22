@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-// import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 export default function Contador({ stock, initial, onAdd = () => {} }){
     const [contador, setContador] = useState(initial);
-    const [addCarrito, setAddCarrito] = useState(false)
+    const [addCarrito, setAddCarrito] = useState(true)
     
     const agregar = ()=>{
         if (contador < stock)setContador(contador + 1);
@@ -14,12 +15,11 @@ export default function Contador({ stock, initial, onAdd = () => {} }){
         if (contador > 0) setContador(contador - 1);
     };
 
-    const resetear = (event)=>{
-        if (contador > 0) {
-            setAddCarrito(true)
-            onAdd(event)
-        }
-    };
+    const addToCart = ()=>{
+        onAdd(contador)
+        setAddCarrito(false)         
+    }
+   
 
     return (
 
@@ -32,10 +32,24 @@ export default function Contador({ stock, initial, onAdd = () => {} }){
             -
         </Button>
         <br />
-       { !addCarrito && <Button variant="success" style={{width: 100}} 
-        onClick={(resetear)} className="reset">
-            Agregar
-        </Button>}
+       { addCarrito ? 
+            <Button variant="success" style={{width: 130}} 
+        onClick={addToCart} className="reset">
+            Agregar al carrito
+        </Button>
+        :
+        <div>
+            <Link to="/cart" >
+                    <Button variant="success"  >Terminar Compra</Button>            
+            </Link>
+    
+            <Link to="/" >
+                    <Button variant="success" >Seguir Comprando</Button>      
+            </Link>
+
+        </div>
+        }
+
     </div>
-    );
+    )
 }

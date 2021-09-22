@@ -19,7 +19,7 @@ function Item({item}) {
                     </Link>
                 </div>
                 <div className="price">$ {item.price}.-</div>
-                < Contador initial={0} stock={7} onAdd={()=> console.log('Se agrego al carrito!')}/>
+                < Contador initial={1} stock={5} onAdd={()=> console.log('Se agregaron productos al carrito!')}/>
                 <Link to = {`/categoria/${item.categoria}`} >
                 <div className="categoria"><span>{item.categoria}</span></div>
                 </Link>

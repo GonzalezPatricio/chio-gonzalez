@@ -4,9 +4,6 @@ import { ItemList } from "../itemList/ItemList";
 import { useParams } from "react-router";
 import { getItem } from "../../utils/GetItem";
 import { Spinner } from "react-bootstrap";
-import { motion } from "framer-motion";
-
-
 
 
 const ItemListContainer = ({greeting, pHome}) => {
@@ -33,15 +30,14 @@ const ItemListContainer = ({greeting, pHome}) => {
             .finally(()=> setLoading(false))
         }
     },[idCategoria])
-    console.log(idCategoria);
 
 
     return (
         <div className="divHome">
             <h1>{greeting}</h1>
             <br/>
-            <motion.p className="pHome"
-            animate={{fontSize: 350, color: "#03284d", x: 20, y: 10}}>{pHome} </motion.p>
+            <p className="pHome"
+            animate={{fontSize: 350, color: "#03284d", x: 20, y: 10}}>{pHome} </p>
         <div className="divHome">
             { loading ? <h2> Cargando.... 
                 <br />
