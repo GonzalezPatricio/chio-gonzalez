@@ -14,12 +14,12 @@ function Item({item}) {
                 <div className="id">
                     <Link to = {`/item/${item.id}`}>
                        <Button variant="secondary">
-                           Detalle del Producto
+                           Detalle del Producto y comprar
                        </Button>
                     </Link>
                 </div>
                 <div className="price">$ {item.price}.-</div>
-                < Contador initial={1} stock={5} onAdd={()=> console.log('Se agregaron productos al carrito!')}/>
+                {/* < Contador initial={1} stock={5} onAdd={()=> console.log('Se agregaron productos al carrito!')}/> */}
                 <Link to = {`/categoria/${item.categoria}`} >
                 <div className="categoria"><span>{item.categoria}</span></div>
                 </Link>
