@@ -1,16 +1,17 @@
 import React from 'react';
 import Contador from '../itemCount/ItemCount';
 import '../../App.css';
-// import { useCartContext } from '../../context/CartContext';
+import { Button } from "react-bootstrap";
+import { useCartContext } from '../../context/CartContext';
 
 
 
 const ItemDetail = ({product}) => {
 
-    // const { agregoItem } = useCartContext()
+ const { agregoItem, limpiarCarrito, quitarDelCarrito, cartList } = useCartContext();
 
     const onAdd=(cant)=>{
-        console.log(cant)
+        agregoItem(product, cant)
     }
 
     return (
@@ -22,6 +23,15 @@ const ItemDetail = ({product}) => {
                 <h4>{product.fullDescription}</h4>
                 <div className="price">$ {product.price}.-</div>
                     <Contador initial={1} stock={5} onAdd={onAdd} />
+                    <Button variant="danger" onClick={limpiarCarrito}> Vaciar Carrito</Button>
+                    {cartList.map(element=>{
+                        return(
+                            <>
+                            {element.prod.name}
+                            <Button variant="warning" onClick={()=> quitarDelCarrito(element.prod.id)}> Quitar Producto</Button>
+                            </>
+                        )
+                    })}
             </div>
         </>
     )

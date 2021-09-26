@@ -4,6 +4,7 @@ import { ItemList } from "../itemList/ItemList";
 import { useParams } from "react-router";
 import { getItem } from "../../utils/GetItem";
 import { Spinner } from "react-bootstrap";
+// import { getFirestore } from "../../services/getFireBase";
 
 
 const ItemListContainer = ({greeting, pHome}) => {
@@ -14,6 +15,13 @@ const ItemListContainer = ({greeting, pHome}) => {
     const { idCategoria } = useParams()
 
     useEffect(() =>{
+        // const dbQuery = getFirestore()
+
+        // dbQuery.collection('items').get()
+        // .then(data => console.log(data))
+        // .cath(err => console.log(err))
+        // .finally(()=> setLoading(false))
+
         if(idCategoria) {
             getItem
             .then(info =>{
