@@ -3,14 +3,17 @@ import "../navbar/navbar.css";
 import { Navbar, NavDropdown, Nav, Form, FormControl, Button} from 'react-bootstrap'; 
 import CartWidget from "../cartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 
 export default function NavBar() {
+    const {iconoCarrito} = useCartContext()
     return(
+        <React.Fragment>
         <div>
             <header className="header">
             <Navbar bg="white" expand="lg" className="navbar">
-                <Link to='/'>
+                <Link exact path to='/'>
                 <Navbar.Brand className="brand">CHIO</Navbar.Brand>
                 </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -42,10 +45,15 @@ export default function NavBar() {
                                             <Button variant="outline-success">Buscar</Button>
                                     </Form>
                         </Navbar.Collapse>
-                < CartWidget />
+
+                <Link to='/cart'>
+                    {iconoCarrito()}
+                     <CartWidget/>
+                </Link>
 
             </Navbar>
 	        </header> 
         </div>
+        </React.Fragment>
     )
 }

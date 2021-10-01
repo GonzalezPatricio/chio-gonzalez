@@ -1,30 +1,34 @@
 import React from "react";
-import "../../App";
-import Contador from "../itemCount/ItemCount";
+// import "../../App";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, CardGroup, Card } from "react-bootstrap";
 
 function Item({item}) {
     return (
+        <React.Fragment>
         <div className="container1" key={item.id}>
-            <div className="card">
-                <div className="pictureUrl"><img src={item.pictureUrl} alt="fotoItem" /></div>
-                <div className="title"><h1>{item.title}</h1></div>
-                <div className="description"><p>Description: "{item.description}"</p></div>
-                <div className="id">
-                    <Link to = {`/item/${item.id}`}>
-                       <Button variant="secondary">
-                           Detalle del Producto y comprar
-                       </Button>
-                    </Link>
-                </div>
-                <div className="price">$ {item.price}.-</div>
-                {/* < Contador initial={1} stock={5} onAdd={()=> console.log('Se agregaron productos al carrito!')}/> */}
-                <Link to = {`/categoria/${item.categoria}`} >
-                <div className="categoria"><span>{item.categoria}</span></div>
-                </Link>
-            </div>
+            <CardGroup>
+                <Card>
+                    <Card.Img variant="top" src={item.pictureUrl}/>
+                        <Card.Body>
+                            <Card.Title className="title"><h2>{item.title}</h2></Card.Title>
+                            <Card.Text className="description">Description: "{item.description}</Card.Text>
+                                <div className="id">
+                                    <Link to = {`/item/${item.id}`}>
+                                        <Button variant="primary">
+                                            Detalle del Producto y comprar
+                                        </Button>
+                                    </Link>
+                                </div>
+                                    <div className="price">$ {item.price}.-</div>
+                                        <Link to = {`/categoria/${item.categoria}`} >
+                                            <div className="categoria"><span>{item.categoria}</span></div>
+                                        </Link>
+                        </Card.Body>
+                </Card>
+            </CardGroup>
         </div>
+        </React.Fragment>
     );
 }
 

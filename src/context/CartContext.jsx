@@ -16,9 +16,9 @@ export const CartContextProvider =({children})=> {
             
             const updateCant = [...cartList];
 
-                updateCant.map(element => {
+                updateCant.map(element  => { 
                         if(element.prod.id === prod.id) {
-                            element.cant = element.cant + cant
+                            element.prod.cant = element.prod.cant + cant
                         }
                     })
                     setCarlist(updateCant)
@@ -27,18 +27,21 @@ export const CartContextProvider =({children})=> {
         }
     }
 
+    const iconoCarrito = () => {
+        return cartList.reduce( (acum, valor)=> acum + valor.cant, 0)         
+    }
+
     const estaEnCarrito = (id) => cartList.find( element=> element.prod.id === id)
     const limpiarCarrito = () => setCarlist([])
     const quitarDelCarrito = (id) => {
     
         const cartListFilter = cartList.filter(element => element.prod.id !== id)
-      
         setCarlist(cartListFilter)
     }
     console.log('carrito', cartList)
 
     return (
-        <cartContext.Provider value={{cartList, agregoItem, limpiarCarrito, quitarDelCarrito}}>
+        <cartContext.Provider value={{cartList, agregoItem, limpiarCarrito, quitarDelCarrito, iconoCarrito}}>
            {children}
         </cartContext.Provider>
 

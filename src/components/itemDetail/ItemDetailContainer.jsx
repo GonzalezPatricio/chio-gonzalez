@@ -25,13 +25,13 @@ useEffect(() => {
 }, [idProducto])
 
     return(
-        <>
+        <React.Fragment>
           { loading ? <h2> Cargando.... 
                 <br />
                 <br />
                 <Spinner animation="border" role="status" variant="info" ><span className="visually-hidden">Cargando...!!!</span>
-                </Spinner></h2> : <ItemDetail product={product} />}
-        </>
+                </Spinner></h2> : <ItemDetail product={product} key={product.id}/>}
+        </React.Fragment>
     )
     
 }

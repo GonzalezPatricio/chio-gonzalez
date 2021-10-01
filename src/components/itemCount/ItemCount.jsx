@@ -23,6 +23,7 @@ export default function Contador({ stock, initial, onAdd = () => {} }){
 
     return (
 
+<React.Fragment>
     <div className="countBtn">
         <Button style={{width: 30, height: 30, margin: 5}} variant="primary" onClick={() => agregar()} className="arriba">
             +
@@ -51,5 +52,6 @@ export default function Contador({ stock, initial, onAdd = () => {} }){
         }
 
     </div>
+</React.Fragment>
     )
 }

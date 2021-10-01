@@ -41,6 +41,7 @@ const ItemListContainer = ({greeting, pHome}) => {
 
 
     return (
+    <React.Fragment>
         <div className="divHome">
             <h1>{greeting}</h1>
             <br/>
@@ -55,6 +56,7 @@ const ItemListContainer = ({greeting, pHome}) => {
         </div>
 
         </div>
+    </React.Fragment>
     )
 }
 
