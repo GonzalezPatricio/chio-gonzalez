@@ -30,7 +30,7 @@ useEffect(() => {
                 <br />
                 <br />
                 <Spinner animation="border" role="status" variant="info" ><span className="visually-hidden">Cargando...!!!</span>
-                </Spinner></h2> : <ItemDetail product={product} key={product.id}/>}
+                </Spinner></h2> : <ItemDetail product={product}/>}
         </React.Fragment>
     )
     

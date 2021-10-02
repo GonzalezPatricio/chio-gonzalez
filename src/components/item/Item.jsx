@@ -9,7 +9,7 @@ function Item({item}) {
         <div className="container1" key={item.id}>
             <CardGroup>
                 <Card>
-                    <Card.Img variant="top" src={item.pictureUrl}/>
+                   <Card.Img variant="top" src={item.pictureUrl} alt="foto"/>
                         <Card.Body>
                             <Card.Title className="title"><h2>{item.title}</h2></Card.Title>
                             <Card.Text className="description">Description: "{item.description}</Card.Text>
