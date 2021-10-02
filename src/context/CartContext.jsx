@@ -38,7 +38,6 @@ export const CartContextProvider =({children})=> {
         const cartListFilter = cartList.filter(element => element.prod.id !== id)
         setCarlist(cartListFilter)
     }
-    console.log('carrito', cartList)
 
     return (
         <cartContext.Provider value={{cartList, agregoItem, limpiarCarrito, quitarDelCarrito, iconoCarrito}}>

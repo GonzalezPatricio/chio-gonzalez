@@ -89,6 +89,15 @@
 .btnVolver {
   display: block;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.btnQuitar{
   margin-bottom: 20px;
+}
+.divCarrito{
+  background-color: #282c34;
+  height: auto;
+  margin: auto;
+  width: 30%;
 }

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../itemListContainer/itemListContainer.css";
 import { ItemList } from "../itemList/ItemList";
 import { useParams } from "react-router";
-import { getItem } from "../../utils/GetItem";
+// import { getItem } from "../../utils/GetItem";
 import { Spinner } from "react-bootstrap";
-// import { getFirestore } from "../../services/getFireBase";
+import { getFirestore } from "../../services/getFireBase";
 
 
 const ItemListContainer = ({greeting, pHome}) => {
@@ -15,28 +15,31 @@ const ItemListContainer = ({greeting, pHome}) => {
     const { idCategoria } = useParams()
 
     useEffect(() =>{
-        // const dbQuery = getFirestore()
 
-        // dbQuery.collection('items').get()
-        // .then(data => console.log(data))
-        // .cath(err => console.log(err))
-        // .finally(()=> setLoading(false))
+        const dbQuery = getFirestore()
 
-        if(idCategoria) {
-            getItem
-            .then(info =>{
-                setItems(info.filter(item=> item.categoria===idCategoria))
-            })
-            .catch(error => console.log(error))
-            .finally(()=> setLoading(false))
-        } else {
-            getItem
-            .then(info =>{
-                setItems(info)
-            })
-            .catch(error => console.log(error))
-            .finally(()=> setLoading(false))
-        }
+        dbQuery.collection('items').get()
+        .then(resp =>{
+                    setItems( resp.docs.map(item=> ( {id: item.id, ...item.data() })))
+                })
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+
+        // if(idCategoria) {
+        //     getItem
+        //     .then(info =>{
+        //         setItems(info.filter(item=> item.categoria===idCategoria))
+        //     })
+        //     .catch(error => console.log(error))
+        //     .finally(()=> setLoading(false))
+        // } else {
+        //     getItem
+        //     .then(info =>{
+        //         setItems(info)
+        //     })
+        //     .catch(error => console.log(error))
+        //     .finally(()=> setLoading(false))
+        // }
     },[idCategoria])
 
 
@@ -45,8 +48,7 @@ const ItemListContainer = ({greeting, pHome}) => {
         <div className="divHome">
             <h1>{greeting}</h1>
             <br/>
-            <p className="pHome"
-            animate={{fontSize: 350, color: "#03284d", x: 20, y: 10}}>{pHome} </p>
+            <p className="pHome"> {pHome} </p>
         <div className="divHome">
             { loading ? <h2> Cargando.... 
                 <br />
