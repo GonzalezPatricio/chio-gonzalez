@@ -13,7 +13,7 @@ export default function NavBar() {
         <div>
             <header className="header">
             <Navbar bg="white" expand="lg" className="navbar">
-                <Link exact path to='/'>
+                <Link to='/'>
                 <Navbar.Brand className="brand">CHIO</Navbar.Brand>
                 </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

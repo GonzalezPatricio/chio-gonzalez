@@ -24,12 +24,6 @@
   margin: auto;
 }
 
-/* .container{
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  margin-bottom: 20px;
-} */
 .container1{
   display: inline-block;
   align-items: center;
@@ -89,7 +83,7 @@
 .btnVolver {
   display: block;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 25px;
 }
 .btnQuitar{
@@ -100,4 +94,42 @@
   height: auto;
   margin: auto;
   width: 30%;
+  margin-bottom: 30px;
+}
+.divBtnFin{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding-bottom: 20px;
+}
+.btn-primary{
+  margin-bottom: 10px;
+}
+.divForm{
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #282c34;
+  padding: 10px;
+  border-radius: 5px;
+}
+.fotoCartFinal{
+  width: 30px;
+  height: 30px;
+}
+.labelForm{
+  color:#f0f0f1;
+  display: flex;
+  margin: 5px;
+}
+.tableProd{
+  width: 90%;
+  margin: auto;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

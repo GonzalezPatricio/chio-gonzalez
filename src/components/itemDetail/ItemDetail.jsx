@@ -28,7 +28,7 @@ const ItemDetail = ({product}) => {
                         <Card.Title className="title"><h2>{product.title}</h2></Card.Title>
                         <Card.Title className="title"> <h4>{product.description}</h4> </Card.Title>
                         <Card.Text className="description">{product.fullDescription}</Card.Text>
-                        <Card.Text><h3 className="price">$ {product.price}.-</h3></Card.Text>
+                        <Card.Text><h3 className="price">$ {product.price}*{product.cant}.-</h3></Card.Text>
                  
                     <Contador initial={1} stock={5} onAdd={onAdd}/>
                   

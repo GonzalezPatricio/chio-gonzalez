@@ -2,14 +2,15 @@ import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetail/ItemDetailContainer';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Cart from './components/cart/Cart';
 import { CartContextProvider } from './context/CartContext';
+import Formulario from './components/form/form';
 
 function App() {
   return (
 <CartContextProvider>
-  <Router>
+  <BrowserRouter>
     <div className="App">
       <NavBar />
 
@@ -29,10 +30,13 @@ function App() {
             <Route path='/cart' exact component>
               <Cart/>
             </Route>
+            <Route path='/finalizar-compra' exact component>
+              <Formulario/>
+            </Route>
         
         </Switch> 
     </div>
-  </Router>
+  </BrowserRouter>
 </CartContextProvider>
 
   );

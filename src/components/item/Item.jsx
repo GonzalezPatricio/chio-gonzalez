@@ -1,7 +1,8 @@
 import React from "react";
-// import "../../App";
 import { Link } from "react-router-dom";
 import { Button, CardGroup, Card } from "react-bootstrap";
+
+
 
 function Item({item}) {
     return (

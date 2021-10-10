@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../itemListContainer/itemListContainer.css";
 import { ItemList } from "../itemList/ItemList";
 import { useParams } from "react-router";
-// import { getItem } from "../../utils/GetItem";
 import { Spinner } from "react-bootstrap";
 import { getFirestore } from "../../services/getFireBase";
 
@@ -24,22 +23,6 @@ const ItemListContainer = ({greeting, pHome}) => {
                 })
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))
-
-        // if(idCategoria) {
-        //     getItem
-        //     .then(info =>{
-        //         setItems(info.filter(item=> item.categoria===idCategoria))
-        //     })
-        //     .catch(error => console.log(error))
-        //     .finally(()=> setLoading(false))
-        // } else {
-        //     getItem
-        //     .then(info =>{
-        //         setItems(info)
-        //     })
-        //     .catch(error => console.log(error))
-        //     .finally(()=> setLoading(false))
-        // }
     },[idCategoria])
 
 

@@ -12,13 +12,13 @@ export const CartContextProvider =({children})=> {
     const [cartList, setCarlist] = useState([])
 
     const agregoItem = (prod, cant)=> {
-        if(estaEnCarrito(prod.id)) {
+        if(estaEnCarrito (prod.id) ) {
             
             const updateCant = [...cartList];
 
-                updateCant.map(element  => { 
+                updateCant.map(element => { 
                         if(element.prod.id === prod.id) {
-                            element.prod.cant = element.prod.cant + cant
+                            element.cant = element.cant + cant
                         }
                     })
                     setCarlist(updateCant)
@@ -38,6 +38,9 @@ export const CartContextProvider =({children})=> {
         const cartListFilter = cartList.filter(element => element.prod.id !== id)
         setCarlist(cartListFilter)
     }
+    // const precioTotal = () =>{
+    //     return cartList.reduce((acum, valor)=>(acum + (valor.cant * valor.prod.price)))
+    // }
 
     return (
         <cartContext.Provider value={{cartList, agregoItem, limpiarCarrito, quitarDelCarrito, iconoCarrito}}>

@@ -40,14 +40,15 @@ export default function Contador({ stock, initial, onAdd = () => {} }){
         </Button>
         :
         <div>
-            <Link to="/cart" >
-                    <Button variant="success"  >Terminar Compra</Button>            
-            </Link>
-    
             <Link to="/" >
                     <Button variant="success" >Seguir Comprando</Button>      
             </Link>
-
+        <div>
+            <Link to="/cart" >
+                    <Button variant="success"> Ir al Carrito</Button>            
+            </Link>
+        </div>
+    
         </div>
         }
 
